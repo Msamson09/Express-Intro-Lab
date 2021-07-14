@@ -1,17 +1,17 @@
 import express from 'express'
-import * as studentDb from '.data/student-db.js'
+import * as studentDb from './data/student-db.js'
 
 const app = express()
 
 app.set('view engine', 'ejs')
 
 app.get('/', function(req, res) {
-    res.render('students')
+    res.redirect('/students')
 })
 
 app.get('/students', function(req, res) {
     studentDb.find({}, function(error, students){
-        res.render('views/students/index', {
+        res.render('students/index', {
             students: students,
             error: error
         })

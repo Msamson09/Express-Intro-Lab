@@ -14,11 +14,11 @@
     <ul>
         <% students.forEach(function(student) { %>
             <li>
-                <%= student.text %>
+                <%= student.studentName %>
                 - 
-                 
+                <%= student.tall ? 'tall' : 'short' %> 
             </li>
-        })
+       <% }) %> 
     </ul>
 </body>
 </html>

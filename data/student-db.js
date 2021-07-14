@@ -3,9 +3,9 @@ export {
 }
 
 const students = [
-    {studentName: 'Michael', height: 'sort of tall'},
-    {studentName: 'Avis', height: 'short'},
-    {studentName: 'BillyBob', height: 'reall tall'},
+    {studentName: 'Michael', tall: true},
+    {studentName: 'Avis', tall: false},
+    {studentName: 'BillyBob', tall: true},
 ]
 const find = (conditions, callback) => {
     // see if this works, if not, execute the code in the catch block
@@ -15,9 +15,10 @@ const find = (conditions, callback) => {
         throw new TypeError('Please pass in an object')
       }
       // If the object is empty, return all the todos
-      if (Object.keys(conditions).length === 0) return callback(null, todos)
+      if (Object.keys(conditions).length === 0) return callback(null, students)
       // deal with errors
     } catch (error) {
       console.log(error)
       callback(error, [])
     }
+}
